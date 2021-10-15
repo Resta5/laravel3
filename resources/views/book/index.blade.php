@@ -20,7 +20,7 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Title</h3>
+            <h2 class="card-title">Daftar Buku</h2>
             <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                     <i class="fas fa-minus"></i>
@@ -32,15 +32,37 @@
         </div>
         <div class="card-body">
             @foreach ($buku as $data)
+            Pengarang Buku : {{$data->pengarang->nama_pengarang}}<br>
+            EmailPengarang : {{$data->pengarang->email}}<br>
             Nama Buku : {{$data->nama_buku}} <br>
+            @if ($data->jumlah_halaman > 1)
             Jumlah Halaman Buku : {{$data->jumlah_halaman}} <br>
+            @else
+            Jumlah Halaman Buku : <b>Belum mempunyai Halaman</b><br>
+            @endif
             Translate Judul : {{$data->translate_judul_buku}}<br>
             <hr>
             @endforeach
                 </div>
         <!-- /.card-body -->
         <div class="card-footer">
-            Footer
+            <h2><b>Pengarang</b></h2><br>
+            @foreach ($pengarang as $data)
+            Pengarang Buku : {{$data->nama_pengarang}}<br>
+            Email Pengarang : {{$data->email}}<br>
+            No telp : {{$data->tlp}}<br>
+            <b>Data Buku</b><br>
+            @foreach ($data->book as $item)
+            Nama Buku : {!! '<b>' . $item->nama_buku . '</b>' !!} <br>
+            @if ($item->jumlah_halaman > 1)
+            Jumlah Halaman Buku : {{$item->jumlah_halaman}} <br>
+            @else
+            Jumlah Halaman Buku : <b>Belum mempunyai halaman</b><br>
+            @endif
+            Translate Judul : {{$item->translate_judul_buku}}<br>
+            @endforeach
+            <hr>
+            @endforeach
         </div>
         <!-- /.card-footer-->
     </div>

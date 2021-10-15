@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\book;
+
 use App\Models\pengarang;
 use Illuminate\Http\Request;
 
-class BookController extends Controller
+class PengarangController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        $buku = book::all();
-        $pengarang = pengarang::all();
-        return view('book.index', compact('buku', 'pengarang'));
+        //
     }
 
     /**
@@ -26,8 +24,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        // halaman menambah data
-        return 'halaman menambah book';
+        //
     }
 
     /**
@@ -36,55 +33,53 @@ class BookController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($id)
+    public function store(Request $request)
     {
-        // proses menambahkan data
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\pengarang  $pengarang
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(pengarang $pengarang)
     {
-        // halaman menampilkan data by $id
-        return 'halaman menampilkan user ' .$id;
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\pengarang  $pengarang
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(pengarang $pengarang)
     {
-        // halaman edit data by $id
-        return 'halaman edit user ' .$id;
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\pengarang  $pengarang
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function update(Request $request, pengarang $pengarang)
     {
-        // proses edit data by $id
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\pengarang  $pengarang
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(pengarang $pengarang)
     {
-        // proses hapus data by $id
+        //
     }
 }
